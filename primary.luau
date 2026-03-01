@@ -76,10 +76,17 @@ function Library:MakeDraggable(topbarobject, object)
 end
 
 function Library:NewWindow(ConfigWindow)
-	local ConfigWindow = self:MakeConfig({
-		Title = "King Rua Hub",
-		Description = "By _ng.shinichi",
-	}, ConfigWindow or {})
+    local player = game.Players.LocalPlayer
+    local Netwing = player:FindFirstChild("KingRuaUI_Premium")
+
+    if Netwing then
+        Netwing:Destroy()
+    end
+
+    local ConfigWindow = self:MakeConfig({
+    Title = "King Rua Hub",
+    Description = "By _ng.shinichi",
+    }, ConfigWindow or {})
 	local KingRuaUI_Premium = Instance.new("ScreenGui")
 	local DropShadowHolder = Instance.new("Frame")
 	local DropShadow = Instance.new("ImageLabel")
@@ -122,7 +129,6 @@ function Library:NewWindow(ConfigWindow)
 	KingRuaUI_Premium.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	KingRuaUI_Premium.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	KingRuaUI_Premium.ResetOnSpawn = false
-	KingRuaUI_Premium.IsAdded = true
 
 	DropShadowHolder.Name = "DropShadowHolder"
 	DropShadowHolder.Parent = KingRuaUI_Premium
