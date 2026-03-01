@@ -122,6 +122,7 @@ function Library:NewWindow(ConfigWindow)
 	KingRuaUI_Premium.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	KingRuaUI_Premium.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	KingRuaUI_Premium.ResetOnSpawn = false
+	KingRuaUI_Premium.IsAdded = true
 
 	DropShadowHolder.Name = "DropShadowHolder"
 	DropShadowHolder.Parent = KingRuaUI_Premium
