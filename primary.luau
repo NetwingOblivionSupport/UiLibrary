@@ -1567,35 +1567,43 @@ end
 
 		return TabFunc
 	end
-	local G2L = {};
+	
+	local ExistingToggle = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("KingRua_MobileToggle")
+    if ExistingToggle then ExistingToggle:Destroy() end
 
-	G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
-	G2L["1"].ResetOnSpawn = false;
-	G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+    local G2L = {};
 
-	G2L["2"] = Instance.new("ImageButton", G2L["1"]);
-	G2L["2"]["BorderSizePixel"] = 0;
-	G2L["2"].Visible = true
-	self:MakeDraggable(G2L["2"],G2L["2"])
-	G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-	G2L["2"]["Image"] = [[rbxassetid://99735585031476]];
-	G2L["2"]["Size"] = UDim2.new(0, 50, 0, 50);
-	G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-	G2L["2"]["Position"] = UDim2.new(0.26651, 0, 0.43687, 0);
+    G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+    G2L["1"].Name = "KingRua_MobileToggle";
+    G2L["1"].ResetOnSpawn = false;
+    G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
-	G2L["3"] = Instance.new("UICorner", G2L["2"]);
-	G2L["3"]["CornerRadius"] = UDim.new(1, 0);
+    G2L["2"] = Instance.new("ImageButton", G2L["1"]);
+    G2L["2"]["BorderSizePixel"] = 0;
+    G2L["2"].Visible = true;
+    self:MakeDraggable(G2L["2"],G2L["2"]);
+    G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+    G2L["2"]["Image"] = [[rbxassetid://99735585031476]];
+    G2L["2"]["Size"] = UDim2.new(0, 50, 0, 50);
+    G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+    G2L["2"]["Position"] = UDim2.new(0.26651, 0, 0.43687, 0);
 
-	G2L["4"] = Instance.new("UIStroke", G2L["2"]);
-	G2L["4"]["Thickness"] = 0.5;
-	G2L["4"]["Color"] = Color3.fromRGB(255, 165, 0);
-	G2L["2"].MouseButton1Click:Connect(function()
-		KingRuaUI_Premium.Enabled = not KingRuaUI_Premium.Enabled
-	end)
-	Minize.MouseButton1Click:Connect(function()
-	KingRuaUI_Premium.Enabled = false
-	end)
-	return Tab
+    G2L["3"] = Instance.new("UICorner", G2L["2"]);
+    G2L["3"]["CornerRadius"] = UDim.new(1, 0);
+
+    G2L["4"] = Instance.new("UIStroke", G2L["2"]);
+    G2L["4"]["Thickness"] = 0.5;
+    G2L["4"]["Color"] = Color3.fromRGB(255, 165, 0);
+
+    G2L["2"].MouseButton1Click:Connect(function()
+        KingRuaUI_Premium.Enabled = not KingRuaUI_Premium.Enabled
+    end)
+
+    Minize.MouseButton1Click:Connect(function()
+        KingRuaUI_Premium.Enabled = false
+    end)
+
+    return Tab
 end
 
 return Library
