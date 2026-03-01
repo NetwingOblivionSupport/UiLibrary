@@ -76,18 +76,15 @@ function Library:MakeDraggable(topbarobject, object)
 end
 
 function Library:NewWindow(ConfigWindow)
-    local player = game.Players.LocalPlayer
-    local Netwing = player:FindFirstChild("KingRuaUI_Premium")
-
-    if Netwing then
-        Netwing:Destroy()
+    local NetwingUI = game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("KingRuaUI_Premium")
+    if NetwingUI then
+    NetwingUI:Destroy()
     end
-
     local ConfigWindow = self:MakeConfig({
-    Title = "King Rua Hub",
-    Description = "By _ng.shinichi",
+        Title = "King Rua Hub",
+        Description = "By _ng.shinichi",
     }, ConfigWindow or {})
-	local KingRuaUI_Premium = Instance.new("ScreenGui")
+    local KingRuaUI_Premium = Instance.new("ScreenGui")
 	local DropShadowHolder = Instance.new("Frame")
 	local DropShadow = Instance.new("ImageLabel")
 	local Main = Instance.new("Frame")
