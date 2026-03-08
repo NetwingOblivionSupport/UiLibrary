@@ -303,6 +303,7 @@ function Library:NewWindow(ConfigWindow)
 	Close.Text = ""
 	Close.MouseButton1Down:Connect(function()
     KingRuaUI_Premium:Destroy()
+    KingRua_MobileToggle:Destroy()
     end)
 
 	Icon_3.Name = "Icon"
