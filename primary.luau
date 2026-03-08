@@ -1569,8 +1569,8 @@ end
 		return TabFunc
 	end
 	
-	local ExistingToggle = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("KingRua_MobileToggle")
-    if ExistingToggle then ExistingToggle:Destroy() end
+	local KingRua_MobileToggle = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("KingRua_MobileToggle")
+    if KingRua_MobileToggle then KingRua_MobileToggle:Destroy() end
 
     local G2L = {};
 
